@@ -1,0 +1,83 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .nav-item a {
+    color: #facc15;
+    text-decoration: none;
+    font-size: 25px;
+    transition: color 0.3s;
+  }
+  
+  .nav-item:hover {
+    color: #facc15;
+  }
+  
+/* Cacher le menu-toggle sur les grands écrans */
+@media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+  
+  /* Mobile (burger menu) */
+@media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 200px;
+      padding: 1rem;
+      z-index: 1000;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+      background-color: transparent;
+      border: 2px solid #facc15;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+  
+    .menu-toggle::before {
+      content: "☰";
+      font-size: 24px;
+      color: #facc15;
+      display: block;
+      text-align: center;
+      line-height: 36px;
+    }
+  
+    .menu-toggle.open::before {
+      content: "✕";
+    }
+  }
+  
